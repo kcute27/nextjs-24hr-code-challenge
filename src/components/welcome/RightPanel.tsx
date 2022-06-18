@@ -1,17 +1,23 @@
+import { useUser } from "@auth0/nextjs-auth0";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { IAuthStore } from "../../services/auth/types";
 import useAuth from "../../services/auth/useAuth";
+import useStore from "../../store/useStore";
 
 const RightPanel = () => {
-  const { isAuthenticated, isLoading, user } = useAuth();
+  const { isLoading } = useUser();
+  const { isAuthenticated, currentUser } = useStore(
+    (state: IAuthStore) => state
+  );
   return (
     <div className="px-6 py-6 text-center shadow flex w-[100%] lg:w-[40%] md:w-[40%] sm:w-[40%] flex-col lg:rounded-tr-[30px] lg:rounded-br-[30px] md:rounded-tr-[30px] md:rounded-br-[30px] bg-success place-content-center place-items-center">
       {isLoading ? (
         <div className=" h-[50px] w-[200px] bg-black opacity-10 rounded-sm animate-pulse"></div>
       ) : isAuthenticated ? (
         <p className="text-white text-[30px] font-semibold h-auto">
-          Welcome, {user?.nickname}!
+          Welcome, {currentUser?.nickname}!
         </p>
       ) : (
         <p className="text-white text-[30px] font-semibold h-auto">

@@ -6,15 +6,13 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute: FC<ProtectedRouteProps> = ({ children }) => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
 
   return (
     <div>
-      {isAuthenticated ? (
-        children
-      ) : (
-        <Error statusCode={401} title="Unauthorized" />
-      )}
+      {isAuthenticated
+        ? children
+        : !isLoading && <Error statusCode={401} title="Unauthorized" />}
     </div>
   );
 };

@@ -5,11 +5,13 @@ interface AppHeadProps {
   title?: string;
 }
 
-const AppHead: FC<AppHeadProps> = ({ title = "Welcome" }) => {
+const AppHead: FC<AppHeadProps> = ({ title }) => {
   return (
     <div>
       <Head>
-        <title>{title}</title>
+        <title>
+          {title !== "" ? `Weather Forecast - ${title}` : "Weather Forecast"}
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
     </div>

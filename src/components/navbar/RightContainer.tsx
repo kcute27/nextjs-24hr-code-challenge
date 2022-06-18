@@ -1,4 +1,3 @@
-import React from "react";
 import useAuth from "../../services/auth/useAuth";
 import LogoutButton from "./LogoutButton";
 import MenusButton from "./MenusButton";

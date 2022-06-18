@@ -2,7 +2,7 @@ import Brand from "./Brand";
 import NavMenus from "./NavMenus";
 import RightContainer from "./RightContainer";
 import { HomeIcon, CloudIcon, SunIcon } from "@heroicons/react/outline";
-import { INavigationPaths } from "../../constants/types";
+import { INavigationPaths } from "../types";
 
 export const NAVIGATION_PATHS: Array<INavigationPaths> = [
   {

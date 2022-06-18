@@ -1,7 +1,8 @@
-export interface IUser {
-    sub: string,
-    nickname: string,
-    name: string,
-    picture: string,
-    updated_at: string,
-}
+import { UserProfile } from "@auth0/nextjs-auth0";
+
+export interface IAuthStore {
+    currentUser: UserProfile | null,
+    setCurrentUser: (currentUser: UserProfile) => void,
+    isAuthenticated: boolean,
+    setIsAuthenticated: (isAuth: boolean) => void,
+} 

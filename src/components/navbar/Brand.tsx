@@ -8,16 +8,16 @@ interface BrandProps {
 
 const Brand: FC<BrandProps> = ({ name, logoPath }) => {
   return (
-    <div className="flex w-fit flex-row place-items-center cursor-pointer">
+    <div className="flex w-fit max-w-[300px] flex-row place-items-center cursor-pointer">
       <Image
         src={logoPath}
         width={50}
         height={50}
         objectFit="contain"
+        layout="fixed"
         alt="logo"
-        className="shadow"
       />
-      <h3 className="text-slate-600 text-lg m-3 font-semibold hover:text-blue-600">
+      <h3 className="text-slate-600 text-lg m-3 truncate font-semibold hover:text-blue-600">
         {name}
       </h3>
     </div>

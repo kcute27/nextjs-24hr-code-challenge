@@ -1,11 +1,14 @@
 import React from "react";
 import Layout from "../src/components/Layout";
+import ProtectedRoute from "../src/services/auth/ProtectedRoute";
 
 const home = () => {
   return (
-    <Layout>
-      <div></div>
-    </Layout>
+    <ProtectedRoute>
+      <Layout>
+        <div></div>
+      </Layout>
+    </ProtectedRoute>
   );
 };
 

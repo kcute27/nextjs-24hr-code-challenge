@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 const RightPanel = () => {
@@ -9,9 +11,11 @@ const RightPanel = () => {
       <p className="text-white text-sm mt-4">
         Click the button to login with your <br /> GihHub Account
       </p>
-      <div className="hover:bg-dark cursor-pointer shadow hover:border-dark mt-10 w-[100px] h-[auto] bg-success border p-1 rounded-full">
-        <p className="text-white font-semibold">Login</p>
-      </div>
+      <Link href={"/api/auth/login"}>
+        <div className="hover:bg-dark cursor-pointer shadow hover:border-dark mt-10 w-[100px] h-[auto] bg-success border p-1 rounded-full">
+          <p className="text-white font-semibold">Login</p>
+        </div>
+      </Link>
     </div>
   );
 };

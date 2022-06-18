@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Layout from "../src/components/Layout";
 import WelcomeContainer from "../src/components/welcome/WelcomeContainer";
 
-const Home: NextPage = () => {
+const Index: NextPage = () => {
   return (
     <Layout>
       <WelcomeContainer />
@@ -10,4 +10,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Index;

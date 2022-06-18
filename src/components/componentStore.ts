@@ -4,7 +4,7 @@ import { IComponentStore } from "./types";
 
 
 const createComponentStore: StoreSlice<IComponentStore> = (set) => ({
-    searchKey: "",
+    searchKey: "Philippines",
     setSearchKey: (key: string) => set(() => ({ searchKey: key })),
 })
 

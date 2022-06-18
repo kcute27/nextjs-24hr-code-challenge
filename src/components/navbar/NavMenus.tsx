@@ -15,9 +15,6 @@ const NavMenus: FC<NavMenusProps> = ({ menus }) => {
     setPathName("/" + router.pathname.split("/")[1]);
   }, [router.pathname]);
 
-  useEffect(() => {
-    console.log(pathName);
-  }, [pathName]);
   return (
     <div className="flex flex-row w-[600px] place-content-center">
       {menus.map((nav, index) => (

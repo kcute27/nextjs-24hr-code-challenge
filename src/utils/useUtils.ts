@@ -11,7 +11,13 @@ const useUtils = () => {
         return url.split("/")
     }
 
-    return { parseUserProfile }
+    const convertCtoF = (celsius: number) => {
+        var cTemp = celsius;
+        var cToFahr = cTemp * 9 / 5 + 32;
+        return cToFahr
+    }
+
+    return { parseUserProfile, convertCtoF }
 }
 
 export default useUtils

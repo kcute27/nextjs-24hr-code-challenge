@@ -17,7 +17,7 @@ const Brand: FC<BrandProps> = ({ name, logoPath }) => {
         layout="fixed"
         alt="logo"
       />
-      <h3 className="text-slate-600 text-lg m-3 truncate font-semibold hover:text-blue-600">
+      <h3 className="text-dark text-xl m-3 truncate font-semibold hover:text-info">
         {name}
       </h3>
     </div>

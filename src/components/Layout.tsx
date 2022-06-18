@@ -8,10 +8,10 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="mx-auto flex h-[100%] min-h-screen w-[100%] min-w-fit flex-col bg-gray-100">
+    <div className="mx-auto bg-gray-50 flex h-screen w-[100%] min-w-fit flex-col">
       <AppHead />
       <Navbar />
-      <div className="my-[70px]">{children}</div>
+      <div className="">{children}</div>
     </div>
   );
 };

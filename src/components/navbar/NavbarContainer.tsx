@@ -24,7 +24,7 @@ export const NAVIGATION_PATHS: Array<INavigationPaths> = [
 
 const NavbarContainer = () => {
   return (
-    <div className="w-[100%] p-2 h-[auto] bg-slate-100 justify-between flex flex-row shadow fixed">
+    <div className="w-[100%] bg-white p-2 h-[auto] justify-between flex flex-row shadow fixed">
       <Brand
         name="Weather Forecast"
         logoPath="/static/images/weather-app.png"

@@ -20,7 +20,7 @@ export const SearchBox = () => {
           placeholder="Search weather by city..."
         />
       </div>
-      <Link href={"/weather"}>
+      <Link href={`/weather/${searchKey}`}>
         <button className="mt-5 p-3 bg-success shadow rounded-lg hover:opacity-80 transition-all ease-in-out duration-300 font-semibold text-white">
           Display Weather
         </button>

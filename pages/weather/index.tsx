@@ -7,10 +7,7 @@ const Weather = () => {
   const router = useRouter();
   const { searchKey } = useStore((state: IComponentStore) => state);
   useEffect(() => {
-    router.push(
-      "/weather/[city]",
-      `/weather/${searchKey !== "" ? searchKey : "Philippines"}`
-    );
+    router.push(`/weather/${searchKey !== "" ? searchKey : "Philippines"}`);
   }, [router, searchKey]);
 };
 

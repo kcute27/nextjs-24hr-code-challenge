@@ -3,13 +3,11 @@ import { GITHUB_URL } from '../constants/urls'
 
 const useUtils = () => {
 
-    const parseUserProfile = (user: UserProfile | null) => {
-        return GITHUB_URL + user?.nickname
-    }
+    const parseUserProfile = (user: UserProfile | null) => GITHUB_URL + user?.nickname
 
-    const getPrimaryNav = (url: string) => {
-        return url.split("/")
-    }
+
+    const getPageTitle = (url: string) => url.split("/")[1].replace("/", "")
+
 
     const convertCtoF = (celsius: number) => {
         var cTemp = celsius;
@@ -17,7 +15,7 @@ const useUtils = () => {
         return cToFahr
     }
 
-    return { parseUserProfile, convertCtoF }
+    return { parseUserProfile, convertCtoF, getPageTitle }
 }
 
 export default useUtils

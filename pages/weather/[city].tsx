@@ -12,7 +12,7 @@ import ProtectedRoute from "../../src/services/auth/ProtectedRoute";
 const City: NextPage = () => {
   const router = useRouter();
   const [weatherData, setWeatherData] = useState<IWeather | null>(null);
-  const url = `${WEATHER_API}?q=${router.query.city}&appid=${WEATHER_API_APPID}&cnt=5&units=metric`;
+  const url = `${WEATHER_API}?q=${router.query.city}&appid=${WEATHER_API_APPID}&cnt=20&units=metric`;
   const { data, isValidating, error } = useSWR(url);
 
   useEffect(() => {

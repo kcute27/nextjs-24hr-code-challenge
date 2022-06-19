@@ -6,5 +6,7 @@ export interface INavigationPaths {
 
 export interface IComponentStore {
     searchKey: string
-    setSearchKey: (key: string) => void
+    setSearchKey: (key: string) => void,
+    menuOpen: boolean,
+    toggleMenu: () => void,
 } 

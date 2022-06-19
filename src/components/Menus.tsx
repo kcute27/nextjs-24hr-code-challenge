@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { FC, useEffect, useState } from "react";
 import useAuth from "../services/auth/useAuth";
 import useStore from "../store/useStore";
+import useUtils from "../utils/useUtils";
 import { IComponentStore, INavigationPaths } from "./types";
 
 interface MenusProps {
@@ -16,10 +17,11 @@ const LogoutPath = {
 };
 
 const Menus: FC<MenusProps> = ({ navs }) => {
+  const router = useRouter();
   const { menuOpen, toggleMenu } = useStore((state: IComponentStore) => state);
   const { isAuthenticated } = useAuth();
+  const { getPageTitle } = useUtils();
   const [navPaths, setNavPaths] = useState<Array<INavigationPaths>>([]);
-  const router = useRouter();
   const [pathName, setPathName] = useState("");
 
   useEffect(() => {
@@ -27,8 +29,8 @@ const Menus: FC<MenusProps> = ({ navs }) => {
   }, [navs, isAuthenticated]);
 
   useEffect(() => {
-    setPathName("/" + router.pathname.split("/")[1]);
-  }, [router.pathname]);
+    setPathName("/" + getPageTitle(router.pathname));
+  }, [router, getPageTitle]);
 
   return (
     <div
@@ -45,7 +47,10 @@ const Menus: FC<MenusProps> = ({ navs }) => {
             ${
               !isAuthenticated && index != 0 && "pointer-events-none opacity-50"
             }
-            ${pathName === nav.path && "pointer-events-none bg-gray-50 font-semibold"}
+            ${
+              pathName === nav.path &&
+              "pointer-events-none bg-gray-50 font-semibold"
+            }
             p-2 text-success text-base last:border-b-0 border-b-[1px]`}
           >
             {nav.name}

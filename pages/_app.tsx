@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <SWRConfig
       value={{
         revalidateOnReconnect: true,
-        revalidateOnFocus: true,
+        revalidateOnFocus: false,
         fetcher: (url: string) => axios.get(url).then((res) => res.data),
       }}
     >

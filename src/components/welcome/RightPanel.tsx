@@ -43,7 +43,7 @@ const RightPanel = () => {
         </Link>
       ) : (
         <Link href={"/weather"}>
-          <div className="hover:bg-dark cursor-pointer shadow hover:border-dark mt-10 w-auto h-[auto] bg-success border p-3 rounded-full">
+          <div className="hover:bg-dark cursor-pointer shadow hover:border-dark mt-10 w-auto h-[auto] bg-success border p-3 rounded-full transition-all ease-in-out duration-200">
             <p className="text-white font-semibold">Check Weather</p>
           </div>
         </Link>

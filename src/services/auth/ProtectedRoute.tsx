@@ -10,9 +10,13 @@ const ProtectedRoute: FC<ProtectedRouteProps> = ({ children }) => {
 
   return (
     <div>
-      {isAuthenticated
-        ? children
-        : !isLoading && <Error statusCode={401} title="Unauthorized" />}
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : isAuthenticated ? (
+        children
+      ) : (
+        !isLoading && !isAuthenticated && <Error statusCode={401} />
+      )}
     </div>
   );
 };
